@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <>
+    <div className="container">
       <div className="flex justify-between py-8 container">
         <div className="text-2xl">
           <a href="kbdwrite">
@@ -41,7 +41,7 @@ const Navbar = () => {
           </svg>
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
