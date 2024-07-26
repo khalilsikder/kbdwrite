@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="container">
     <footer className="container footer footer-center bg-[#B2CFDD] text-base-content rounded p-10 mt-8">
       <nav className="flex flex-1 justify-center gap-4">
-        <a href="about us">About us</a>
-        <a href="contract us">Contact Us</a>
-        <a href="products">Products</a>
+        <Link to= '/aboutus'>About us</Link>
+        <Link to= '/contractus'>Contruct us</Link>
+        <Link to= '/products'>Products</Link>
       </nav>
       <nav>
         <div className="flex flex-1 justify-center gap-4">

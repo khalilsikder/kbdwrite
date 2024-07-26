@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="container">
@@ -9,20 +11,21 @@ const Navbar = () => {
         </div>
         <div className="flex gap-8 text-lg">
           <p>
-            <a href="">Home</a>
+            <Link to= '/'>Home</Link>
           </p>
           <p>
-            <a href="products">Products</a>
+            <Link to= '/products'>Products</Link>
           </p>
           <p>
-            <a href="aboutus">About Us</a>
+            <Link to= '/aboutus'>About Us</Link>
           </p>
           <p>
-            <a href="contractus">Contract Us</a>
+            <Link to= '/contractus'>Contract Us</Link>
           </p>
           <p>
-            <a href="dashboard">Dashboard</a>
+            <Link to= '/dashboard'>Dashboard</Link>
           </p>
+          
         </div>
         <p>
           <svg

@@ -11,7 +11,7 @@ import {
 const RatingModal = () => {
     return (
         <Dialog>
-  <DialogTrigger>Open</DialogTrigger>
+  <DialogTrigger>Rate us please</DialogTrigger>
   <DialogContent>
     <DialogHeader>
       <DialogTitle>Are you absolutely sure?</DialogTitle>

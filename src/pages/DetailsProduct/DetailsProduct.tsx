@@ -1,17 +1,12 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { TProduct } from "@/types";
-import { Button } from "../ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "../ui/card";
 import { Link } from "react-router-dom";
 
-export const ProductCard = ({ product }: { product: TProduct }) => {
-  
-  return (
-    <Card>
+
+export const DetailsProduct = ({product}:{product:TProduct}) => {
+    return (
+        <Card>
       <Link to={`/${product?.slug}`}>
         <CardHeader>
           <img className="rounded-2xl" src={product?.image} />
@@ -37,10 +32,10 @@ export const ProductCard = ({ product }: { product: TProduct }) => {
         </CardContent>
       </Link>
       <CardFooter className="text-center justify-center">
-        <Button> <Link to='/detailsproduct'>show details</Link></Button>
+        <Button>Add to cart</Button>
       </CardFooter>
     </Card>
-  );
+    );
 };
 
-export default ProductCard;
+export default DetailsProduct;
