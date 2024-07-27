@@ -1,5 +1,6 @@
 import MainLayouts from "@/components/layouts/MainLayouts";
 import AboutUs from "@/pages/AboutUs/AboutUs";
+import Checkout from "@/pages/checkOut/Checkout";
 import ContractUs from "@/pages/ContractUs/ContractUs";
 import ProductList from "@/pages/Dashboard/ProductList";
 import DetailsProduct from "@/pages/DetailsProduct/DetailsProduct";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path:'detailsproduct',
                 element:<DetailsProduct></DetailsProduct>  
+            },
+            {
+                path:'checkout',
+                element:<Checkout></Checkout>
             }
             
         ]

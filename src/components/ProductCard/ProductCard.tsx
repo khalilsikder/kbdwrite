@@ -21,15 +21,15 @@ export const ProductCard = ({ product }: { product: TProduct }) => {
           <div className=" flex items-center space-x-4 rounded-md border p-4">
             <div className="flex-1 space-y-1">
               <p className="text-sm font-medium leading-none">
-               Title: {product?.name}
+               Name: {product?.name}
               </p>
               <p className="text-sm text-muted-foreground">Brand: {product?.brand}</p>
               <p className="text-sm text-muted-foreground">
                 AvailableQuantity: {product?.availableQuantity}
               </p>
-              <p className="text-sm text-muted-foreground">
+              {/* <p className="text-sm text-muted-foreground">
                Description: {product?.description}
-              </p>
+              </p> */}
               <p className="text-sm text-muted-foreground">Price: ${product?.price}</p>
               <p className="text-sm text-muted-foreground">Rating: ***{product?.rating}</p>
             </div>

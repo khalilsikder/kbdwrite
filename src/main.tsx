@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <div className='w-full mx-10 my-10'>
     <Provider store={store}>
-   <RouterProvider router={router} />
+   <RouterProvider router={router}/>
    {/* <App /> */}
    </Provider>
     </div>

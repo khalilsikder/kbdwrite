@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { addtoCart } from "@/redux/cartSlice";
 import { TProduct } from "@/types";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 export const DetailsProduct = ({product}:{product:TProduct}) => {
+  const dispatch = useDispatch()
     return (
         <Card>
       <Link to={`/${product?.slug}`}>
@@ -16,7 +19,7 @@ export const DetailsProduct = ({product}:{product:TProduct}) => {
           <div className=" flex items-center space-x-4 rounded-md border p-4">
             <div className="flex-1 space-y-1">
               <p className="text-sm font-medium leading-none">
-               Title: {product?.name}
+               Name: {product?.name}
               </p>
               <p className="text-sm text-muted-foreground">Brand: {product?.brand}</p>
               <p className="text-sm text-muted-foreground">
@@ -32,7 +35,7 @@ export const DetailsProduct = ({product}:{product:TProduct}) => {
         </CardContent>
       </Link>
       <CardFooter className="text-center justify-center">
-        <Button>Add to cart</Button>
+        <Button onClick={() => dispatch(addtoCart({product}))}>Add to cart</Button>
       </CardFooter>
     </Card>
     );
