@@ -1,11 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { baseApi } from './api/baseApi'
-import cartSlice from './cartSlice'
+import cartReducer from './cartSlice'
 
 export const store = configureStore({
   reducer: {
+    cart: cartReducer,
     [baseApi.reducerPath]: baseApi.reducer,
-    cart: cartSlice
+   
   },
 
   middleware:(getDefaultMiddlewares)=>
@@ -13,6 +14,6 @@ export const store = configureStore({
 })
 
 
-// export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>
 
-// export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch

@@ -48,8 +48,7 @@ const Footer = () => {
       </nav>
       <aside className="text-center">
         <p>
-          Copyright © ${new Date().getFullYear()} - All right reserved by ACME
-          Industries Ltd
+          Copyright © ${new Date().getFullYear()} - All right reserved by KBD Write Online Ltd
         </p>
       </aside>
     </footer>

@@ -1,16 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { useGetProductsQuery } from "@/redux/api/baseApi";
 import { addtoCart } from "@/redux/cartSlice";
-import { TProduct } from "@/types";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 
-export const DetailsProduct = ({product}:{product:TProduct}) => {
+
+
+
+export const DetailsProduct = () => {
+  const {data,error,isLoading} = useGetProductsQuery({})
   const dispatch = useDispatch()
+  const handleAddToCart = (product) => {
+       dispatch(addtoCart(product))
+  }
     return (
-        <Card>
-      <Link to={`/${product?.slug}`}>
+      <div className="container">
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+          <div className="grid grid-cols-3">
+           {data?.data?.map(product => <div key={product.id}>
+            <Card>
         <CardHeader>
           <img className="rounded-2xl" src={product?.image} />
         </CardHeader>
@@ -33,12 +48,17 @@ export const DetailsProduct = ({product}:{product:TProduct}) => {
             </div>
           </div>
         </CardContent>
-      </Link>
       <CardFooter className="text-center justify-center">
-        <Button onClick={() => dispatch(addtoCart({product}))}>Add to cart</Button>
+        {/* <Button> <Link to='/detailsproduct'>show details</Link></Button> */}
+        <Button onClick={()=>handleAddToCart(product)}>add to cart</Button>
       </CardFooter>
     </Card>
-    );
-};
-
+           </div>)}
+          </div>
+        </>
+      ) : null}
+    </div>
+    )
+  }
+        
 export default DetailsProduct;

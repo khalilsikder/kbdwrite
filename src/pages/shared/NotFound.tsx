@@ -1,7 +1,8 @@
+import image from '../../assets/notfound.jpg'
 const NotFound = () => {
     return (
-        <div>
-           <h1>this is not found route</h1> 
+        <div className='container'>
+         <img className='w-2/3 mx-auto' src={image} alt="" />
         </div>
     );
 };
