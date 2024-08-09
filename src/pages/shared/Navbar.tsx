@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const cart = useSelector((state)=>state.cart)
+  const cart = useSelector((state)=>state.cart.cart)
   return (
     <div className="container">
       <div className="flex justify-between py-8 container">
@@ -27,8 +27,7 @@ const Navbar = () => {
           </p>
           <p>
             <Link to= '/dashboard'>Dashboard</Link>
-          </p>
-          
+          </p>  
         </div>
         <Link to= '/cart'>
         <div className="flex">

@@ -1,34 +1,29 @@
-import { createSlice} from "@reduxjs/toolkit";
-import {Toast} from '@radix-ui/react-toast'
+import { createSlice, PayloadAction} from "@reduxjs/toolkit";
 
- const initialState = {
- cartItems: [],
- cartTotalQuantity: 0,
- cartTotalAmount: 0,
-};
+
+const initialState = {
+  value: 0,
+  cart: []
+}
 
 export const cartSlice = createSlice({
 name: 'cart',
 initialState,
 reducers:{
-   addtoCart: (state,action)=>{
-   const itemIndex = state.cartItems.findIndex(
-    (item) => item.id === action.payload.id);
-    if(itemIndex >= 0) {
-      state.cartItems[itemIndex].cartQuantity += 1;
-      Toast.info(`increase ${state.cartItems[itemIndex].name} quantity`,{
-        position:'bottom-left'
-      })
-    }else{
-      const tmpProduct = {...action.payload,cartQuantity:1}
-      state.cartItems.push(tmpProduct);
-      Toast.success(`${action.payload.name} to cart`,{
-        position:'bottom-left'
-      })
-    } 
-   },
+   addtoCart: (state,action) => {
+   state.cart.push(action.payload)
+},
+increment: (state) => {
+  state.value += 1;
+},
+decrement: (state) => {
+  state.value -= 1;
+},
+incrementByAmount: (state,action:PayloadAction<number>) => {
+  state.value += action.payload;
+},
 },
 })
 
-export const {addtoCart} = cartSlice.actions;
+export const {addtoCart,increment,decrement,incrementByAmount} = cartSlice.actions;
 export default cartSlice.reducer;
