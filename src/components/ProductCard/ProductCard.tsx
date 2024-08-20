@@ -8,7 +8,8 @@ import {
 } from "../ui/card";
 import { Link } from "react-router-dom";
 
-export const ProductCard = ({ product }: { product: TProduct }) => {  
+export const ProductCard = ({product}:{product:TProduct}) => { 
+  
   return (
     <Card>
       <Link to={`/${product?.slug}`}>

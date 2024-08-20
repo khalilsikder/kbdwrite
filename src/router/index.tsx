@@ -10,6 +10,7 @@ import Products from "@/pages/Products/Products";
 import NotFound from "@/pages/shared/NotFound";
 import { createBrowserRouter } from "react-router-dom";
 
+
 const router = createBrowserRouter([
     {
         path:'/',

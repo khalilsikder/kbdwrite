@@ -8,8 +8,8 @@ const FeatureProducts = () => {
   console.log(data)
 ;
   return (
-    <>
-      <div className="grid grid-cols-3">
+    <div className="container">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
         {data?.data?.slice(0,6).map((product: TProduct) => (
 
           <ProductCard key={product?._id} product={product}></ProductCard>
@@ -18,7 +18,7 @@ const FeatureProducts = () => {
       <div className="text-center justify-center text-[#04D3E6] text-xl">
         <Link to="/products">see more products</Link>
       </div>
-    </>
+    </div>
   );
 };
 

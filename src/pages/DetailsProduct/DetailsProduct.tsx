@@ -6,16 +6,15 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import { addtoCart } from "@/redux/cartSlice";
+import { addToCart } from "@/redux/features/cartSlice";
+import { useAppDispatch } from "@/redux/hooks";
 import { TProduct } from "@/types";
-import { useDispatch } from "react-redux";
-
 
 export const DetailsProduct = () => {
   const { data, error, isLoading } = useGetProductsQuery({});
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const handleAddToCart = (product: TProduct) => {
-    dispatch(addtoCart(product));
+    dispatch(addToCart(product));
   };
   return (
     <div className="container">
