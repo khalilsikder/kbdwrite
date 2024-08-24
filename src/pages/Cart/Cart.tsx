@@ -30,8 +30,8 @@ const Cart = () => {
                     <img className="m-2" src= {cartItem?.image} alt="" />
                     <h3 className="m-2">Product:  {cartItem?.name}  </h3>
                     <h3 className="m-2">Price:  ${cartItem?.price}  </h3>
-                    <p className="m-2">Quantity: {cartItem?.availableQuantity} </p>
-                    <p className="m-2">TotalPrice: ${cartItem?.price * cartItem.availableQuantity} </p>
+                    <p className="m-2">Quantity: {cartItem?.quantity} </p>
+                    <p className="m-2">TotalPrice: ${cartItem?.price * cartItem?.quantity} </p>
                     <div className="grid bg-red-600 mb-6">
                       <div className="flex gap-28">
                         <p>Remove</p>

@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import { deleteCart, updateCart } from "@/redux/features/cartSlice";
+import { updateCart } from "@/redux/features/cartSlice";
 import { useDispatch } from "react-redux";
 
 const ProductList = () => {
@@ -18,9 +18,6 @@ const ProductList = () => {
 
   const handleUpdate = (item: any) => {
     dispatch(updateCart(item));
-  };
-  const handleDelete = (item: any) => {
-    dispatch(deleteCart(item));
   };
   return (
     <div className="container">
